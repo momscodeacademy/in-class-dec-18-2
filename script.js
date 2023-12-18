@@ -11,9 +11,14 @@ class BankAccount {
     }
   
     withdraw(amount) {
+      // this.balance -= amount;
+        if(amount <= 0){
         this.balance -= amount;
-        console.log(`Withdrawn ${amount} from account. New balance: ${this.balance}`);
+          console.log(`Withdrawn ${amount} from account. New balance: ${this.balance}`);
+          return 
+        }
         //  console.log(`Insufficient funds. Cannot withdraw ${amount}. Current balance: ${this.balance}`);
+      
     }
   
     getBalance() {
