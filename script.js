@@ -11,9 +11,13 @@ class BankAccount {
     }
   
     withdraw(amount) {
-        this.balance -= amount;
-        console.log(`Withdrawn ${amount} from account. New balance: ${this.balance}`);
-        //  console.log(`Insufficient funds. Cannot withdraw ${amount}. Current balance: ${this.balance}`);
+        if (amount > this.balance){
+          console.log(`Insufficient funds. Cannot withdraw ${amount}. Current balance: ${this.balance}`);
+        }else {
+          this.balance -= amount;
+          console.log(`Withdrawn ${amount} from account. New balance: ${this.balance}`);
+        }
+        //  
     }
   
     getBalance() {
@@ -36,3 +40,7 @@ class BankAccount {
   console.log(`Current balance: ${myAccount.getBalance()}`);
   
   console.log(`Final balance: ${myAccount.getBalance()}`);
+
+  //class Bank 
+
+  //fix the code so that we do not have a negative number
